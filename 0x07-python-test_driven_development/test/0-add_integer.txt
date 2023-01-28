@@ -1,0 +1,60 @@
+========================
+How to Use 0-add_integer.py
+========================
+This library is very simple,since it only has one function called
+''add_integer''.
+
+Numbers
+=======
+
+''add_integer()'' returns a sum of two arguments. For numbers, that value is equivalent to using the ''+'' operator.
+
+::
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+	>>> print(add_integer(2, 3))
+	5
+
+It also works with floating-point values.
+
+::
+
+	>>> print(add_integer(2.0, 3))
+	5
+
+Non-Numbers
+==========
+
+Test for modules.
+
+	>>> doc = __import__("0-add_integer").__doc__
+	>>> len(doc) > 1
+	True
+
+Test for Function Documentation.
+
+	>>> func = (__import__("0-add_integer").add_integer.__doc__)
+	>>> len(func) > 1
+	True
+	
+
+Because ''+'' is also defined on data types other than numbers, 0-add_integer()'' does not work with stings, a list, or a tuple.
+
+::
+
+0-add_integer() must have an int value for argument a.
+
+::
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	....
+ 	TypeError: a must be an integer
+
+0-add_integer() must have int arguments.
+
+::
+	>>> add_integer(None)
+	Traceback (most recent call last):
+        ....
+        TypeError: a must be an integer
