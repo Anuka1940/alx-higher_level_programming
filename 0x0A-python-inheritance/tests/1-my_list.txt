@@ -1,0 +1,64 @@
+=========
+Cases
+=========
+
+Test for modules.
+	>>> doc = __import__("1-my_list").__doc__
+	>>> len(doc) > 1
+        True
+
+Test for Class Documentation.
+	>>> class = __import__("1-my_list").MyList.__doc__
+	>>> len(class) > 1
+	True
+
+Test for Function inside a class Documentation.
+	>>> func1 = __import__("MyList").MyList.__doc__
+	>>> len(func1) > 1
+        True
+
+Test for Function ourside a class Documentation.
+	>>> func2 = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(func2) > 1
+	True
+
+==============
+Test for Class
+==============
+Class Mylist:
+	>>> Mylist(list)
+	pass
+
+	>>> def __init__(self)
+	pass
+
+	>>> def print_sorted(self):
+	""" return(sorted(self))"""
+
+
+
+
+
+
+================
+Non-writen Cases
+================
+case1
+::
+	from 1-my_list import MyList
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+case2
+::
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+case3
+::
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+
+
