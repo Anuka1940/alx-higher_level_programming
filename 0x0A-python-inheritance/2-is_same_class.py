@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """ This module define a fuction that check the class of an obj
 """
 
