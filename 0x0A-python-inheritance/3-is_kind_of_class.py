@@ -1,4 +1,4 @@
-#!/urs/bin/python3
+#!/usr/bin/python3
 """ Define a funtion that return True if an obj is an instance of a class"""
 
 
