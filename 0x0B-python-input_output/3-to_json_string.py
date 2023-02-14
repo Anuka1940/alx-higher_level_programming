@@ -1,4 +1,4 @@
-#!/usr/bin/pyton3
+#!/usr/bin/python3
 """Define from_json_string function"""
 import json
 
