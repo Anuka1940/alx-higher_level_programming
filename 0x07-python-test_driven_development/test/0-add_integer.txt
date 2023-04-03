@@ -15,8 +15,15 @@ Numbers
 	>>> print(add_integer(2, 3))
 	5
 
-It also works with floating-point values.
 
+It also work with "-" subtraction
+::
+	>>> print(add_integer(-2, 3)) #doctest: +REPORT_NDIFF
+	1
+	>>> print(add_integer(-2, -5))
+	-7
+
+It also works with floating-point values.
 ::
 
 	>>> print(add_integer(2.0, 3))
@@ -54,7 +61,20 @@ Because ''+'' is also defined on data types other than numbers, 0-add_integer()'
 0-add_integer() must have int arguments.
 
 ::
-	>>> add_integer(None)
+	>>> add_integer(3, 'boy')
 	Traceback (most recent call last):
         ....
-        TypeError: a must be an integer
+        TypeError: b must be an integer
+
+::
+add_integer(None, 8) must have an argument for "a"
+        >>> add_integer( )
+        Traceback (most recent call last):
+        ....
+        TypeError: add_integer() missing 1 required positional argument: 'a'
+
+::
+Test for other types
+	>>> add_integer(True, 5)
+	Traceback (most recent call last):
+	TypeError: a must be an integer

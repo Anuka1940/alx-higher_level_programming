@@ -1,0 +1,25 @@
+:: Test For Module
+	>>> doc = __import__("3-say_my_name").__doc__
+	>>> len(doc) > 1
+	True
+
+:: Test For Documentation
+	>>> fun = (__import__("3-say_my_name").say_my_name__doc__)
+	>>> len(fun) > 1
+	True
+
+=====
+Cases
+=====
+	say_my_name = __import__("3-say_my_name").say_my_name
+
+:: Case 1: test for correct output
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+	>>> say_my_name("John")
+	John
+
+:: Case 2:  first and last_names must be a string
+	>>> say_my_name("John", 12)
+	

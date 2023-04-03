@@ -1,9 +1,5 @@
-"""module to calculate summation
-    this module contains on funtion add_integer
-    this funtions accepts two arguments a and b,
-    these arguments must be int or floats only
-    it returns int always
-    """
+"""module contain a mthod add_integer which return the summatio of two integers "a" and "b"
+"""
 
 
 def add_integer(a, b=98):

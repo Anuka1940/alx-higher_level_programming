@@ -1,0 +1,59 @@
+==================
+This modula has one function called
+'matrix_divided'
+=================
+Non-Numbers
+==========
+''matrix_divided'' returns division of elements in a matrix. For numbers, that value is equivalent to using the ''/'' operator.
+
+Test for modules.
+
+        >>> doc = __import__("2-matrix_divided").__doc__
+        >>> len(doc) > 1
+        True
+
+Test for Function Documentation.
+
+        >>> func = (__import__("2-matrix_divided").matrix_divided.__doc__)
+        >>> len(func) > 1
+        True
+
+===========
+Cases
+===========
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Case1: return the divisions of all the elements in a matrix
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+	>>> print(matrix_divided(matrix, 3)) #doctest: +NORMALIZE_WHITESPACE
+	[[0.33, 0.67, 1.0],
+	[1.33, 1.67, 2.0]]
+
+Case2: if 'div' is negative return the corresponding answer
+::
+	>>> print(matrix_divided(matrix, -3)) #doctest: +NORMALIZE_WHITESPACE
+	[[-0.33, -0.67, -1.0],
+	[-1.33, -1.67, -2.0]]
+
+Case3: Div is most be an integer or float
+::
+	>>> print(matrix_divided(matrix, "abc"))
+	Traceback (most recent call last):
+	....
+	TypeError: div must be a number
+
+Case4: Each row of matrix must be same size
+::
+	>>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	....
+	TypeError: Each row of the matrix must have the same size
+
+Case5: Test for ZeroDivisionError
+::
+	>>> print(matrix_divided(matrix, 0))
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
