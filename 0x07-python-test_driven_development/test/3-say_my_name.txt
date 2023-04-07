@@ -4,22 +4,27 @@
 	True
 
 :: Test For Documentation
-	>>> fun = (__import__("3-say_my_name").say_my_name__doc__)
-	>>> len(fun) > 1
+	>>> func = (__import__("3-say_my_name").say_my_name.__doc__)
+	>>> len(func) > 1
 	True
 
 =====
 Cases
 =====
-	say_my_name = __import__("3-say_my_name").say_my_name
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
 
 :: Case 1: test for correct output
-	>>> say_my_name("John", "Smith")
+	>>> say_my_name("John", "Smith") #doctest: +NORMALIZE_WHITESPACE
 	My name is John Smith
 
-	>>> say_my_name("John")
-	John
+	>>> say_my_name("John") #doctest: +NORMALIZE_WHITESPACE
+	My name is John
 
 :: Case 2:  first and last_names must be a string
 	>>> say_my_name("John", 12)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
 	
+	>>> say_my_name(boy, "boy" )
+	Traceback (most recent call last):
+	NameError: name 'boy' is not defined

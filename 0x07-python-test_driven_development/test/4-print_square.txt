@@ -1,0 +1,30 @@
+Test for modules.
+	>>> doc = __import__("4-print_square").__doc__
+	>>> len(doc) > 1
+	True
+
+Test for Function Documentation.
+	>>> func = (__import__("4-print_square").print_square.__doc__)
+	>>> len(func) > 1
+	True
+
+======
+Cases
+=====
+	>>> print_square = __import__("4-print_square").print_square
+
+::
+Case 1: test for actual output
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square(0)
+
+
+Case 2: test for a not integer
+	>>> print_square("r")
+	Traceback (most recent call last):
+	TypeError: size must be an interger
