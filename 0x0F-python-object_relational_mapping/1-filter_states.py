@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """ This script lists all states starting with 'N' from the database
+hbtn_0c_0_usa using MYSQLdd
 """
 import MySQLdb
 import sys
 
 
 if __name__ == "__main__":
-    """Access and query database"""
+    """
+    Access and query database to get list of all states that contain the searched name"""
 
     if len(sys.argv) != 4:
         print("Usage: {} <mysql_username> <mysql_password> <database_name>"
