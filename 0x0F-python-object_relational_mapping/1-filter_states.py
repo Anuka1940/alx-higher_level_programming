@@ -8,7 +8,8 @@ import sys
 
 if __name__ == "__main__":
     """
-    Access and query database to get list of all states that contain the searched name"""
+    Access and query database to get list of all states
+    that contain the searched name"""
 
     if len(sys.argv) != 4:
         print("Usage: {} <mysql_username> <mysql_password> <database_name>"
@@ -22,8 +23,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=username, passwd=password, db=db_name)
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%'
-    ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%'\
+            ORDER BY id"
     cursor.execute(query)
 
     results = cursor.fetchall()
