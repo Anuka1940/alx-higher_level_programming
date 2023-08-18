@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+""" This script lists all states starting with 'N' from the database
+"""
+import MySQLdb
+import sys
+
+
+if __name__ == "__main__":
+    """Access and query database"""
+
+    if len(sys.argv) != 4:
+        print("Usage: {} <mysql_username> <mysql_password> <database_name>"
+              .format(sys.argv[0]))
+        sys.exit(1)
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=username, passwd=password, db=db_name)
+    cursor = db.cursor()
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%'
+    ORDER BY states.id ASC"
+    cursor.execute(query)
+
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
+    cursor.close()
+    db.close()
