@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """model that create a python file with the class defination
 of Cities using SQLAlchemy"""
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
-from model_state import Base
+from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from model_state import Base, State
 
 
 class City(Base):
