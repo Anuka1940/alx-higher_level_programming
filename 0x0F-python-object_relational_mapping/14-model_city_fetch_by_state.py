@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ Delete a state containing 'a' from the database"""
 
-import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from model_city import City
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+import sys
 
 if __name__ == '__main__':
     """creating a link to db and query"""
