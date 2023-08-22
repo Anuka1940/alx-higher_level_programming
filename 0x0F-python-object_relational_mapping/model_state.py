@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """model that create a python file with the class defination
 of state using SQLAlchemy"""
 from sqlalchemy import create_engine, Column, Integer, String
