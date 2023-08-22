@@ -8,7 +8,6 @@ from sqlalchemy.orm import sessionmaker
 import sys
 
 if __name__ == '__main__':
-    """creating a link to db and query"""
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2],
