@@ -1,0 +1,2 @@
+The time complexity of this algorithm is O(log(n)), as it keeps dividing the search range by 2 in each iteration, effectively reducing the possibilities by half. 
+The space complexity is O(1), as it only uses a constant amount of additional memory for the pointers.
