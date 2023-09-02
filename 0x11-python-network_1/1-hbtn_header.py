@@ -15,7 +15,7 @@ if '__main__' == '__name__':
         with urllib.request.urlopen(url) as response:
             if 'X-Request-Id' in response.headers:
                 x_request_id = response.headers['X-Request']
-                print(f"X-Request-Id: {x_request_id}")
+                print(f"{x_request_id}")
             else:
                 print("X-Request-Id header not found in the response.")
     except urllib.error.URLErro as e:
