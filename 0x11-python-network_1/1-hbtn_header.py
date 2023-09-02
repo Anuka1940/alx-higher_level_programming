@@ -6,18 +6,5 @@ import urllib.request
 import sys
 
 if '__main__' == '__name__':
-    if len(sys.argv) < 2:
-        print("Usage: python script.py <URL>")
-        sys.exit(1)
-
-    url = sys.argv[1]
-    try:
-        with urllib.request.urlopen(url) as response:
-            if 'X-Request-Id' in response.headers:
-                print(response.headers.get('X-Request-Id'))
-            else:
-                print("X-Request-Id header not found in the response.")
-    except urllib.error.URLErro as e:
-        print(f"Error: {e}")
-    except KeyboardInterrupt:
-        print("\nRequest canceled by the user.")
+    with urllib.request.urlopen(url) as response:
+        print(response.headers.get('X-Request-Id'))
